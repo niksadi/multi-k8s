@@ -3,7 +3,7 @@ services:
   - docker
 env:
   global:
-    - SHA=$(git rev-parse HEAD)
+    - SHA=$(git rev-lparse HEAD)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
   - openssl aes-256-cbc -K $encrypted_0c35eebf403c_key -iv $encrypted_0c35eebf403c_iv -in gkey.json.enc -out gkey.json -d
@@ -18,7 +18,7 @@ before_install:
   - docker build -t niksadi/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run niksadi/docker-react npm run test -- --coverage
+  - docker run -e CI=true niksadi/react-test npm run test
 
 deploy:
   provider: script
