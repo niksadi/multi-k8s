@@ -14,3 +14,6 @@ kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=niksadi/multi-server
 kubectl set image deployments/client-deployment client=niksadi/multi-client
 kubectl set image deployments/worker-deployment worker=niksadi/multi-worker
+kubectl set image deployments/upload-deployment worker=us.gcr.io/dci-architecture-sbx/upload
+
+
