@@ -34,10 +34,7 @@ spec:
       - image: us.gcr.io/dci-architecture-sbx/upload:latest
         imagePullPolicy: Always
         name: upload
-        resources: 
-            request:
-                cpu: 0.1
-                memory: "0.5Gi"
+        resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
